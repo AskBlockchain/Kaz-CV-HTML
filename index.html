@@ -1,222 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<title>Kaz Traverso - CV</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Kaz Traverso CV - Full Stack Web3 Developer based in London, UK.">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaz Traverso | Full Stack Web3 Developer</title>
+  <meta name="description" content="CV profile of Kaz Traverso, Full Stack Web3 Developer with blockchain and cloud architecture experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --muted: #475569;
+      --accent: #4338ca;
+      --border: #dbe3ef;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    p { margin: 0 0 10px; }
 
-.bold {
-  font-weight: bold;
-}
+    .container {
+      width: min(1120px, 92%);
+      margin: 28px auto 48px;
+    }
 
-</style>
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--text);
+    }
+    .subtitle {
+      margin-top: 4px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .contact-row {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 0.95rem;
+    }
+    .contact-row span { color: var(--muted); }
 
+    .grid {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+      padding: 24px;
+    }
+
+    .section-title {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .stack + .stack { margin-top: 20px; }
+
+    .chips {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .chips li {
+      border: 1px solid #c7d2fe;
+      background: #eef2ff;
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #3730a3;
+    }
+
+    .sidebar-text {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .role {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .role:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .role-head h3 {
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .date {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .role ul {
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+    .role li {
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .main-section + .main-section { margin-top: 24px; }
+
+    .qual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .qual-grid .qual-card {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #f8fafc;
+      font-size: 0.91rem;
+      color: var(--text);
+    }
+    .qual-grid .qual-card strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    footer a {
+      margin: 0 8px;
+      color: var(--accent);
+    }
+
+    @media (max-width: 920px) {
+      .grid { grid-template-columns: 1fr; }
+      .qual-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body class="w3-blue-grey">
-<main>
-
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-
-    <!-- Left Column -->
-    <div class="w3-third">
-
-      <div class="w3-white w3-text-dark-gray w3-card-4">
-        <div class="w3-display-container w3-container">
-            <h2>Kaz Traverso</h2>
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-indigo"></i>Full Stack Web3 Developer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-indigo"></i>London, UK</p>
-          <p><a href="mailto:kaz@justkaz.co.uk"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-indigo" aria-hidden="true"></i>kaz@justkaz.co.uk</a></p>
-          <p><a href="https://www.linkedin.com/in/kaz-traverso/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin-square fa-fw w3-margin-right w3-large w3-text-indigo" aria-hidden="true"></i>LinkedIn</a></p>
-          <p><a aria-label="Chat on WhatsApp" href="https://wa.me/+4478455580892" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp fa-fw w3-margin-right w3-large" style="color:green" aria-hidden="true"></i>+44 7845 558 0892</a></p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fa fa-btc fa-fw w3-margin-right w3-text-indigo"></i>Web3 Skills</b></p>
-          
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-container w3-center w3-round-xlarge w3-indigo" style="width:100%">Skill Level - Expert</div>
-          </div>
-          <p>Solidity</p>
-          <p>JavaScript Library - Web3.JS & Ethers.JS</p>        
-          <p>Development Framework - Truffle & HardHat</p>         
-          <p>DAPP Deployment Framework & Management - Moralis & ThirdWeb</p>
-
-          <br>         
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-html5 fa-fw w3-margin-right w3-text-indigo"></i>Front-End Web Stack</b></p>
-          
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-center w3-round-xlarge w3-indigo" style="height:24px;width:100%">Skill Level - Expert</div>
-          </div>
-          <p>HTML CSS & JavaScript</p>
-
-          <p>TypeScript</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-center w3-round-xlarge w3-indigo" style="height:24px;width:80%">Skill - Proficient</div>
-          </div>
-
-          <!-- <p>JavaScript</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-center w3-round-xlarge w3-indigo" style="height:24px;width:80%">80%</div>
-          </div> -->
-
-          <p>React.JS</p>
-          <!-- <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-center w3-round-xlarge w3-indigo" style="height:24px;width:80%">Skill - Proficient</div>
-          </div> -->
-
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-gears fa-fw w3-margin-right w3-text-indigo"></i>Back-End</b></p>
-          
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-center w3-round-xlarge w3-indigo" style="height:24px;width:80%">Skill - Proficient</div>
-          </div>
-          
-          <p>Embedded JavaScript EJS, ExpressJS & NestJS</p>
-          
-
-              </div>
-          </div>
-
-
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-indigo" style="font-size:24px;color:red"></i>About Me</h2>
-          <div class="w3-container">
-            <p>As a burgeoning software developer with a focus on <span class="bold">Web3 technologies</span>, I'm excited to bring my skill set to a team ready to shape the future of decentralization. I've honed my foundation in <span class="bold">HTML, CSS, and JavaScript</span> before delving into blockchain and decentralized applications, gaining proficiency in <span class="bold">Solidity, EthersJS, and Web3.JS</span>, as well as development and test environments like Truffle and Hardhat, enabling me to navigate the intricacies of Web3.</p>
-            <p>My communication skills and ability to quickly learn make me well-equipped to translate complex Web3 technologies into practical, impactful solutions. As I'm eager to embark on my first role in this industry, I am excited to contribute my skills and dedication to a vibrant team.</p>
-
-          </div>
-
-        </div>
-
-
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-indigo"></i>Work Experience</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Web3 Developer / <span style="color: red">#</span>AskBlockchain</b></h5>
-          <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2020 - <span class="w3-tag w3-indigo w3-round">Current</span></h6>
-          <ul>
-            <li><span class="bold">Smart Contract Development:</span> Write smart contract code using Solidity, the programming language for Ethereum. Develop smart contracts that define the rules and logic for decentralized applications (DApps), token contracts, or other blockchain-based systems. Ensure the code is secure, efficient, and adheres to best practices.</li>
-            <li><span class="bold">Blockchain Integration:</span> Integrate smart contracts with blockchain networks like Ethereum, ensuring compatibility and functionality. Deploy smart contracts to the blockchain, test them, and verify their correctness. Interact with blockchain nodes and APIs to perform actions on the blockchain, such as reading or modifying data.</li>
-            <li><span class="bold">Web3.js Integration:</span> Utilize the Web3.js library to interact with the Ethereum blockchain from web applications or backend systems. Connect to Ethereum nodes, send transactions, query smart contract data, and listen for blockchain events. Implement functionalities like wallet integration, transaction signing, and contract interactions using Web3.js.</li>
-            <li><span class="bold">DApp Development:</span> Build decentralized applications (DApps) that leverage smart contracts and blockchain technology. Design and develop user interfaces (UI) that interact with smart contracts, allowing users to perform actions on the blockchain. Implement transaction handling, event listening, and state management within the DApp.</li>
-            <li><span class="bold">Smart Contract Auditing:</span> Conduct security audits of smart contracts to identify vulnerabilities, design flaws, or potential exploits. Perform code reviews and analysis to ensure the smart contract is resistant to attacks and follows best practices for security, such as preventing reentrancy, handling input validation, and protecting sensitive data.</li>
-            <li><span class="bold">Token Development:</span> Design and develop Ethereum-based tokens, such as ERC-20 or ERC-721 tokens. Implement token contracts with functionalities like token minting, burning, transfers, and ownership management. Ensure compliance with token standards and security considerations.</li>
-            <li><span class="bold">Testing and Debugging:</span> Write comprehensive test cases for smart contracts and conduct unit tests, integration tests, and end-to-end tests. Use testing frameworks like Truffle or Hardhat to automate testing and ensure the correctness of smart contract functionalities. Debug and fix issues or bugs identified during testing.</li>
-            <li><span class="bold">Blockchain Governance:</span> Stay updated with the latest advancements in blockchain technology, particularly Ethereum. Understand the implications of protocol upgrades, hard forks, and changes in consensus mechanisms. Contribute to discussions on blockchain governance and participate in the community to share knowledge and best practices.</li>
-            <li><span class="bold">Documentation and Best Practices:</span> Document smart contract code, architecture, and development processes to ensure clarity and maintainability. Follow best practices for smart contract development, code organization, and version control. Contribute to open-source projects, libraries, or developer communities to foster knowledge sharing and collaboration.</li>
-            <li><span class="bold">Continuous Learning:</span> Stay abreast of advancements in blockchain technology, new features, and development tools. Engage in continuous learning to enhance your understanding of blockchain protocols, decentralized systems, and evolving standards. Participate in workshops, conferences, or online courses to expand your skill set and stay at the forefront of blockchain development.</li>
-            <!-- <li>Building connectivity to DeFi exchanges and other blockchain networks.</li>
-            <li>Designing and implementing smart contracts using Solidity or other programming languages.</li>
-            <li>Developing, testing, and deploying blockchain-based applications on various platforms.</li>
-            <li>Participating in code reviews and providing feedback to other developers on code quality, performance, and maintainability.</li>
-            <li>Developing and maintaining tools and frameworks for testing, deploying, and monitoring blockchain-based applications.</li>
-            <li>Troubleshooting and debugging issues related to blockchain-based applications and providing timely resolution to technical problems.</li>
-            <li>Staying up-to-date with the latest developments in blockchain technology and identifying opportunities to leverage new tools and platforms.</li> -->
-          </ul>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Azure Solution Specialist (Solution Architect) / SoftwareONE</b></h5>
-          <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2016 – May 2019</h6>
-          <ul>
-            <li><span class="bold">Solution Design:</span> Collaborate with stakeholders to understand business requirements and design Azure solutions that meet their needs. This involves selecting the appropriate Azure services, defining architecture patterns, and ensuring scalability, availability, and security.</li>
-            <li><span class="bold">Infrastructure Deployment:</span> Deploy and configure Azure resources, including virtual machines, networking, storage, databases, and other services, based on the solution design. Use infrastructure-as-code (IaC) principles and tools like Azure Resource Manager (ARM) templates to automate and streamline deployment processes.</li>
-            <li><span class="bold">Cloud Governance:</span> Establish governance practices to ensure compliance, cost management, and security across Azure resources. Define policies, implement monitoring and auditing mechanisms, and enforce best practices to maintain control and optimize resource usage.</li>
-            <li><span class="bold">Security and Identity Management:</span> Implement security controls and identity management solutions in Azure. This includes designing and configuring Azure Active Directory (AAD), managing user access, implementing role-based access control (RBAC), and securing data at rest and in transit.</li>
-            <li><span class="bold">High Availability and Disaster Recovery:</span> Design and implement high availability and disaster recovery solutions in Azure. This involves using features like Azure Availability Zones, virtual machine scale sets, load balancers, and backup and recovery services to ensure business continuity.</li>
-            <li><span class="bold">DevOps Integration:</span> Collaborate with development teams to enable DevOps practices in Azure. Implement CI/CD pipelines, automate application deployments using Azure DevOps or other tools, and facilitate seamless integration between development and operations.</li>
-            <li><span class="bold">Cost Optimization:</span> Analyze and optimize Azure costs for the organization. Implement cost management tools, monitor resource usage, identify cost-saving opportunities, and provide recommendations for optimizing spending in Azure.</li>
-            <li><span class="bold">Documentation and Technical Support:</span> Create technical documentation, including architectural diagrams, deployment guides, and best practices. Provide technical guidance and support to stakeholders, development teams, and operations teams on Azure-related issues and solutions.</li>
-          </ul>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Azure Solution Specialist (Technical Pre-Sales)/ Insight UK</b></h5>
-          <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>August 2014 – August 2016</h6>
-          <ul>
-            <li><span class="bold">Sales:</span> Delivered 120% YoY cloud revenue growth.</li>
-            <li><span class="bold">Customer Engagement:</span> Engage with customers to understand their business requirements, challenges, and goals. Act as a trusted advisor, building relationships and demonstrating a deep understanding of Azure services and solutions.</li>
-            <li><span class="bold">Technical Presentations and Demonstrations:</span> Conduct presentations and demonstrations to showcase the capabilities of Azure services and how they address customer needs. Effectively communicate complex technical concepts to both technical and non-technical stakeholders.</li>
-            <li><span class="bold">Proof of Concept (PoC) Development:</span> Develop proof of concepts to validate the feasibility and benefits of Azure solutions. Build and configure Azure environments, deploy sample workloads, and demonstrate the value of the proposed solution to customers.</li>
-            <li><span class="bold">Solution Proposal and Estimation:</span> Collaborate with the sales team to create solution proposals, including detailed scope, timelines, and pricing. Provide accurate estimations of the required Azure resources, costs, and licensing to help customers make informed decisions.</li>
-            <li><span class="bold">Competitive Analysis:</span> Stay up to date with the latest industry trends and competitive offerings. Conduct competitive analysis to highlight the unique value proposition of Azure services compared to other cloud providers. Articulate the benefits of Azure and address customer concerns or objections.</li>
-            <li><span class="bold">Collaboration with Sales and Technical Teams:</span> Work closely with sales representatives and technical teams to ensure alignment between customer requirements and proposed solutions. Coordinate with technical experts to address specific technical questions or challenges raised by customers.</li>
-            <li><span class="bold">Industry and Solution Knowledge:</span> Develop a deep understanding of Azure services, industry-specific solutions, and best practices. Stay informed about new Azure features, updates, and emerging technologies. Leverage this knowledge to provide customized recommendations and guidance to customers.</li>
-            <li><span class="bold">Relationship Building:</span> Build and maintain strong relationships with key stakeholders, including customers, partners, and internal teams. Foster trust and confidence in Azure solutions through effective communication, responsiveness, and a customer-centric approach.</li>
-            <li><span class="bold">Continuous Learning and Development:</span> Stay abreast of Azure certifications, training, and industry certifications relevant to the role. Continuously enhance your technical knowledge and expertise in Azure services, architecture patterns, and cloud computing trends.</li>
-          </ul>
-        </div>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>Kaz Traverso</h1>
+      <p class="subtitle">Full Stack Web3 Developer</p>
+      <div class="contact-row">
+        <span>Reading, Berkshire, UK</span>
+        <span>Tel: 0784 558 0892</span>
+        <a href="mailto:kaz@askblockchain.co.uk?subject=Job%20Opportunity">kaz@askblockchain.co.uk</a>
+        <a href="https://www.linkedin.com/in/kaz-traverso/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/AskBlockchain" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://docs.google.com/document/d/11syCnTTRR-zuCrp7JhpolDuk8BpwHyX-xRGiezqHxfI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Online CV</a>
       </div>
+    </header>
 
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-indigo"></i>PROFESSIONAL QUALIFICATIONS</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Moralis Academy</b></h5>
-          <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2023</h6>
-          <p>Ethereum Smart Contract Programming 201</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Moralis Academy</b></h5>
-          <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Oct 2022</h6>
-          <p>Ethereum Smart Contract Programming 101</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Said Business School, University of Oxford</b></h5>
-          <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2019</h6>
-          <p>Oxford Blockchain Strategy</p>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Said Business School, University of Oxford</b></h5>
-          <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2019</h6>
-          <p>Oxford Fintech Programme</p>
-        </div>
+    <div class="grid">
+      <aside class="card">
+        <section class="stack">
+          <h2 class="section-title">About</h2>
+          <p class="sidebar-text">Web3-focused developer with strong foundations in HTML, CSS, and JavaScript, plus hands-on blockchain development in Solidity, Ethers.js, Web3.js, Truffle, Hardhat, and Foundry. Skilled at translating complex technical topics into practical outcomes.</p>
+        </section>
+
+        <section class="stack">
+          <h2 class="section-title">Key Titles and Domains</h2>
+          <ul class="chips">
+            <li>Full Stack Web3 Developer</li>
+            <li>Technical Pre-Sales</li>
+            <li>DBA</li>
+            <li>System Admin</li>
+            <li>Information Technology</li>
+            <li>Software</li>
+            <li>Education</li>
+          </ul>
+        </section>
+
+        <section class="stack">
+          <h2 class="section-title">Product Areas</h2>
+          <ul class="chips">
+            <li>EVM</li>
+            <li>Solidity</li>
+            <li>Web3.js</li>
+            <li>Ethers.js</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Next.js</li>
+            <li>Node.js</li>
+          </ul>
+        </section>
+
+        <section class="stack">
+          <h2 class="section-title">Cloud and Data</h2>
+          <ul class="chips">
+            <li>Azure</li>
+            <li>Microsoft 365</li>
+            <li>IaaS</li>
+            <li>PaaS</li>
+            <li>Hybrid Cloud</li>
+            <li>SQL Server</li>
+            <li>SSIS</li>
+            <li>SSAS</li>
+            <li>SSRS</li>
+            <li>SharePoint</li>
+          </ul>
+        </section>
+
+        <section class="stack">
+          <h2 class="section-title">Other Skills</h2>
+          <ul class="chips">
+            <li>Sandler</li>
+            <li>SPIN Selling</li>
+            <li>Windows</li>
+            <li>Ubuntu</li>
+            <li>Active Directory</li>
+            <li>DNS</li>
+            <li>IIS</li>
+            <li>FTP</li>
+          </ul>
+        </section>
+
+        <section class="stack">
+          <h2 class="section-title">Location and Mobility</h2>
+          <p class="sidebar-text">Reading, Berkshire, UK. Able to commute up to 20 miles and willing to relocate for the right role.</p>
+        </section>
+      </aside>
+
+      <div class="card">
+        <section class="main-section">
+          <h2 class="section-title">Professional Experience</h2>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Blockchain Solution Engineer - Crypto.com</h3>
+              <span class="date">May 2024 - Present</span>
+            </div>
+            <ul>
+              <li>Stay updated on blockchain industry trends, emerging technologies, and the competitive landscape to identify opportunities for growth and improvement.</li>
+              <li>Engage with the developer community to gather valuable insights, identify areas for product enhancement, and solve problems.</li>
+              <li>Serve as a proactive champion for developers, actively addressing their concerns and facilitating a supportive and engaging community environment.</li>
+              <li>Collaborate with product, marketing, and engineering teams to ensure developer relations initiatives are aligned with business strategies and objectives.</li>
+              <li>Create and maintain comprehensive technical documentation, tutorials, sample code, and other resources to empower developers.</li>
+              <li>Provide timely and effective technical support to developers, assisting with troubleshooting, technical inquiries, and integration challenges.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Web3 Developer - #AskBlockchain</h3>
+              <span class="date">May 2020 - 2024</span>
+            </div>
+            <ul>
+              <li>Write smart contract code using Solidity for DApps, token contracts, and other blockchain-based systems. Ensure code is secure, efficient, and adheres to best practices.</li>
+              <li>Developed smart contracts for flash loans on liquidity platforms Compound Finance and AAVE for trading arbitrage on Uniswap.</li>
+              <li>Integrate smart contracts with blockchain networks like Ethereum, ensuring compatibility and functionality. Deploy, test, and verify correctness. Interact with blockchain nodes and APIs.</li>
+              <li>Utilise the Web3.js library to interact with the Ethereum blockchain from web applications or backend systems. Implement wallet integration, transaction signing, and contract interactions.</li>
+              <li>Build decentralised applications (DApps) that leverage smart contracts. Design and develop user interfaces, transaction handling, event listening, and state management.</li>
+              <li>Conduct security audits of smart contracts to identify vulnerabilities, design flaws, or potential exploits. Ensure reentrancy protection, input validation, and sensitive data handling.</li>
+              <li>Design and develop ERC-20 and ERC-721 tokens with minting, burning, transfers, and ownership management. Ensure compliance with token standards.</li>
+              <li>Write comprehensive test cases and conduct unit, integration, and end-to-end tests using Truffle and Hardhat. Debug and fix issues identified during testing.</li>
+              <li>Stay updated with the latest advancements in blockchain technology. Contribute to discussions on governance and participate in the community.</li>
+              <li>Document smart contract code, architecture, and development processes. Contribute to open-source projects and developer communities.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Azure Solution Specialist (Technical Pre-Sales) - COMPAREX and SoftwareONE UK</h3>
+              <span class="date">Sep 2016 - May 2019</span>
+            </div>
+            <ul>
+              <li>Provide solution design expertise in Microsoft Azure and AWS cloud solutions.</li>
+              <li>Deliver RFI/RFP responses, statements of work, and manage proof-of-concept engagements.</li>
+              <li>Design Azure architecture across compute, networking, storage, security, identity, backup, and site recovery.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Azure Solution Specialist (Technical Pre-Sales) - Insight UK</h3>
+              <span class="date">Aug 2014 - Aug 2016</span>
+            </div>
+            <ul>
+              <li>Delivered 120% YoY cloud revenue growth.</li>
+              <li>Led cloud assessment workshops and architected cloud and hybrid-cloud solutions.</li>
+              <li>Developed proof-of-concept projects, pilot demos, and customer solution proposals.</li>
+              <li>Transitioned cloud migration plans to deployment partners and served as technical escalation point.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>SQL Technical Pre-Sales Specialist - Microsoft Corporation</h3>
+              <span class="date">Jan 2011 - Feb 2013</span>
+            </div>
+            <ul>
+              <li>Provided technical sales support to the CTM account management team, influencing SQL Server premium licensing revenue.</li>
+              <li>Grew SQL premium licensing revenue by $1 million YoY; developed opportunities to 20% and passed to SI partners.</li>
+              <li>Built demand-generation campaigns with large account resellers and delivered product training across teams.</li>
+              <li>Presented and demonstrated technology to key customer stakeholders.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="main-section">
+          <h2 class="section-title">Qualifications</h2>
+          <div class="qual-grid">
+            <div class="qual-card">
+              <strong>Encode.Club</strong>
+              Solidity Bootcamp Q3 2023<br>
+              Expert Solidity Bootcamp Q4 2023
+            </div>
+            <div class="qual-card">
+              <strong>Saïd Business School, University of Oxford</strong>
+              Oxford Fintech Programme (May 2019)<br>
+              Oxford Blockchain Strategy Programme (Jul 2019)
+            </div>
+            <div class="qual-card">
+              <strong>Microsoft Certified Technology Specialist</strong>
+              Exam 70-431 SQL Server 2005
+            </div>
+            <div class="qual-card">
+              <strong>Microsoft Certified</strong>
+              70-533, 70-534, 70-270, 70-215, 70-218, 70-214, 70-297
+            </div>
+          </div>
+        </section>
       </div>
-
-    <!-- End Right Column -->
     </div>
+  </main>
 
-
-
-
-  <!-- End Grid -->
-  </div>
-
-  <!-- End Page Container -->
-</div>
-
-<footer class="w3-container w3-indigo w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-
-
-
-
-  <a href="https://www.linkedin.com/in/kaz-traverso-481b5b3b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa fa-linkedin w3-hover-opacity" aria-hidden="true"></i></a>
-  <a href="https://twitter.com/ask_block_chain" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile"><i class="fa fa-twitter w3-hover-opacity" aria-hidden="true"></i></a>
-
-</footer>
-</main>
+  <footer>
+    <p>Find me on social media</p>
+    <a href="https://www.linkedin.com/in/kaz-traverso/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+    <a href="https://github.com/AskBlockchain" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+    <a href="https://twitter.com/ask_block_chain" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile">Twitter</a>
+  </footer>
 </body>
 </html>
